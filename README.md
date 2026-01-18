@@ -1,18 +1,18 @@
-# Linux Practice
+# 🐧 Linux Practice
 
 A collection of shell scripts and examples for practicing Linux command-line tools and log analysis techniques.
 
-## Repository Contents
+## 📁 Repository Contents
 
-### Scripts
+### 📜 Scripts
 
 - **`everyday_log.sh`** - Script for daily log management tasks
 - **`generate_logs.sh`** - Generates sample log files for practice
 - **`log_analyzer.sh`** - Analyzes log files and extracts useful information
 
-## Essential Linux Commands Reference
+## 🛠️ Essential Linux Commands Reference
 
-### grep - Search Text Patterns
+### 🔍 grep - Search Text Patterns
 
 The `grep` command searches for patterns in files or input streams.
 
@@ -57,7 +57,7 @@ grep -v "INFO" practice.log
 grep "ERROR.*timeout" practice.log
 ```
 
-### awk - Pattern Scanning and Processing
+### ⚙️ awk - Pattern Scanning and Processing
 
 `awk` is a powerful text processing tool that works with columns and patterns.
 
@@ -101,7 +101,7 @@ awk '{print NR, $0}' file.txt
 awk '{sum+=$1; count++} END {print sum/count}' numbers.txt
 ```
 
-### sed - Stream Editor
+### ✏️ sed - Stream Editor
 
 `sed` is used for text transformations and substitutions.
 
@@ -152,7 +152,7 @@ sed '5i\New line text' file.txt
 sed '/pattern/a\New line after match' file.txt
 ```
 
-### cut - Extract Columns
+### ✂️ cut - Extract Columns
 
 Extract specific columns or character positions from text.
 
@@ -171,7 +171,7 @@ cut -d':' -f1 /etc/passwd
 cut -d',' -f1,3,5 data.csv
 ```
 
-### sort - Sort Lines
+### 🔢 sort - Sort Lines
 
 Sort text lines alphabetically or numerically.
 
@@ -196,7 +196,7 @@ sort -u file.txt
 sort -k3 -n file.txt
 ```
 
-### uniq - Remove Duplicates
+### 🎯 uniq - Remove Duplicates
 
 Remove or count duplicate adjacent lines (usually used after sort).
 
@@ -215,7 +215,7 @@ sort file.txt | uniq -d
 sort file.txt | uniq -u
 ```
 
-### wc - Word Count
+### 📊 wc - Word Count
 
 Count lines, words, and characters.
 
@@ -234,7 +234,7 @@ wc -c file.txt
 wc file.txt
 ```
 
-### head and tail - View File Parts
+### 👀 head and tail - View File Parts
 
 View the beginning or end of files.
 
@@ -259,7 +259,7 @@ tail -f practice.log
 tail -n 100 -f practice.log
 ```
 
-### find - Search for Files
+### 🔎 find - Search for Files
 
 Search for files and directories.
 
@@ -281,7 +281,7 @@ find . -name "*.tmp" -delete
 find . -name "*.log" -exec grep "ERROR" {} \;
 ```
 
-### xargs - Build Command Lines
+### 🔗 xargs - Build Command Lines
 
 Build and execute commands from standard input.
 
@@ -300,7 +300,7 @@ cat urls.txt | xargs -I {} curl {}
 cat list.txt | xargs -P 4 -I {} ./process.sh {}
 ```
 
-## Common Log Analysis Examples
+## 📈 Common Log Analysis Examples
 
 ### Count log levels
 ```bash
@@ -337,7 +337,7 @@ grep -oE "[0-9]+ms" practice.log | sed 's/ms//' | sort -rn | head -10
 awk '{print $2}' practice.log | cut -d':' -f1 | sort | uniq -c
 ```
 
-## Combining Commands (Pipelines)
+## 🔄 Combining Commands (Pipelines)
 
 The real power comes from combining these commands:
 
@@ -352,7 +352,7 @@ grep "WARN" practice.log | grep -oE "[0-9]+ms" | sed 's/ms//' | awk '{sum+=$1; n
 awk '{$1=$2=$3=""; print $0}' practice.log | sort | uniq -c | sort -rn | head -5
 ```
 
-## Tips
+## 💡 Tips
 
 1. Always test commands on sample data before running on production logs
 2. Use `less` or `more` for viewing large files: `less practice.log`
@@ -362,7 +362,7 @@ awk '{$1=$2=$3=""; print $0}' practice.log | sort | uniq -c | sort -rn | head -5
 6. Chain commands with `&&` for sequential execution: `cmd1 && cmd2 && cmd3`
 7. Use `man` for detailed command documentation: `man grep`
 
-## Practice Exercises
+## 🎓 Practice Exercises
 
 1. Generate logs using `generate_logs.sh`
 2. Count how many ERROR, WARN, and INFO entries exist
@@ -372,10 +372,10 @@ awk '{$1=$2=$3=""; print $0}' practice.log | sort | uniq -c | sort -rn | head -5
 6. Find all response times above the 95th percentile
 7. Create a summary report with counts and statistics
 
-## License
+## 📄 License
 
 MIT License - Feel free to use for learning and practice.
 
-## Contributing
+## 🤝 Contributing
 
 Contributions welcome! Feel free to add more scripts and examples.
